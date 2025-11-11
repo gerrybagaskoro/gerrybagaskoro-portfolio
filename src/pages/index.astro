@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Intro from '../components/Intro.astro';
+import Header from '../components/Header.astro';
+import Sidebar from '../components/Sidebar.astro';
+import CV from '../components/CV.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Gerry Bagaskoro Putro - Portofolio">
+  <Intro />
+  
+  <Header />
+  
+  <main class="container">
+    <Sidebar />
+    
+    <section class="content">
+      <CV />
+      <Projects /> 
+      <Skills />
+      <Contact />
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

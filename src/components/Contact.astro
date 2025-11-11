@@ -1,0 +1,55 @@
+---
+const socials = [
+  {
+    platform: "Email",
+    icon: "📧",
+    handle: "gerrybagaskoro@proton.me",
+    url: "mailto:gerrybagaskoro@proton.me"
+  },
+  {
+    platform: "GitHub", 
+    icon: "💻",
+    handle: "@gerrybagaskoro",
+    url: "https://github.com/gerrybagaskoro"
+  },
+  {
+    platform: "LinkedIn",
+    icon: "💼", 
+    handle: "Gerry Bagaskoro Putro",
+    url: "https://linkedin.com/in/gerrybagaskoro"
+  }
+];
+---
+
+<div id="contact" class="section fade-in">
+  <h2>Contact</h2>
+  <p class="contact-description">
+    Contact Me for Collaboration, Projects, or Just to Chat About Technology:
+  </p>
+
+  <div class="socials-grid">
+    {socials.map(social => (
+      <a href={social.url} class="social-card" target={social.platform !== 'Email' ? '_blank' : ''}>
+        <span class="social-icon">{social.icon}</span>
+        <span class="social-name">{social.platform}</span>
+        <span class="social-handle">{social.handle}</span>
+      </a>
+    ))}
+  </div>
+
+  <div class="contact-form">
+    <h3>📨 Direct Message</h3>
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" placeholder="Full Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Your Messsage..." rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-full">Send Message</button>
+    </form>
+  </div>
+</div>

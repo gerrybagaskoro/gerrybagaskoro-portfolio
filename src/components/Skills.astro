@@ -1,0 +1,36 @@
+---
+const skills = {
+  "📱 Mobile Development": [
+    { name: "Flutter & Dart", percentage: 75 },
+    { name: "Kotlin", percentage: 25 }
+  ],
+  "🌐 Web Development": [
+    { name: "HTML / CSS / JS", percentage: 75 },
+    { name: "React Basics", percentage: 25 }
+  ],
+  "🔧 Tools & Other": [
+    { name: "Git & GitHub", percentage: 75 },
+    { name: "UI/UX Design", percentage: 70 }
+  ]
+};
+---
+
+<div id="skills" class="section slide-in">
+  <h2>Skills</h2>
+  <div class="skills-container">
+    {Object.entries(skills).map(([category, skillList]) => (
+      <div class="skill-category">
+        <h4>{category}</h4>
+        {skillList.map(skill => (
+          <div class="skill">
+            <span>{skill.name}</span>
+            <div class="bar">
+              <div class="fill" style={`width: ${skill.percentage}%`}></div>
+            </div>
+            <span class="skill-percentage">{skill.percentage}%</span>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>

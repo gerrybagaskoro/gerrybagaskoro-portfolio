@@ -1,0 +1,63 @@
+---
+const education = [
+  {
+    institution: "State University of Jakarta",
+    program: "Bachelor's Degree Program in Informatics and Computer Engineering Education",
+    period: "2019 – 2021 (not completed)"
+  },
+  {
+    institution: "Teratai Putih Vocational High School",
+    program: "Computer and Network Engineering",
+    period: ""
+  }
+];
+
+const workExperience = [
+  "Internship: IT Helpdesk at PT. PLN Persero - Jakarta",
+  "IT Support at PT. Central Samudra Steel - Jakarta", 
+  "Crew Staff at Sentinel Computer Store - Jakarta"
+];
+
+const techStack = [
+  "Flutter / Dart",
+  "HTML / CSS / JavaScript", 
+  "Git & GitHub",
+  "VS Code",
+  "Figma / Canva"
+];
+---
+
+<div id="cv" class="section slide-in">
+  <h2>Curriculum Vitae</h2>
+  <div class="cv-container">
+    <div class="cv-block">
+      <div class="cv-icon">🎓</div>
+      <h3>Education</h3>
+      <ul>
+        {education.map(edu => (
+          <li>
+            <strong>{edu.institution}</strong><br />
+            {edu.program}<br />
+            {edu.period && <em>{edu.period}</em>}
+          </li>
+        ))}
+      </ul>
+    </div>
+    
+    <div class="cv-block">
+      <div class="cv-icon">💼</div>
+      <h3>Work Experience</h3>
+      <ul>
+        {workExperience.map(exp => <li>{exp}</li>)}
+      </ul>
+    </div>
+    
+    <div class="cv-block">
+      <div class="cv-icon">🛠️</div>
+      <h3>Tech & Stack</h3>
+      <ul class="tools">
+        {techStack.map(tech => <li>{tech}</li>)}
+      </ul>
+    </div>
+  </div>
+</div>

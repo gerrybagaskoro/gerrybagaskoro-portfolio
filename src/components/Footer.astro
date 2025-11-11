@@ -1,0 +1,18 @@
+---
+const footerLinks = [
+  { text: "Privacy", href: "#privacy" },
+  { text: "Terms", href: "#terms" },
+  { text: "Contact", href: "mailto:gerrybagaskoro@proton.me" }
+];
+---
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 Gerry Bagaskoro Putro — Portfolio Website. All rights reserved</p>
+    <div class="footer-links">
+      {footerLinks.map(link => (
+        <a href={link.href}>{link.text}</a>
+      ))}
+    </div>
+  </div>
+</footer>

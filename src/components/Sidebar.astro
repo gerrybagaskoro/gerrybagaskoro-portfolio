@@ -1,0 +1,29 @@
+---
+const stats = [
+  { number: "1+", label: "Years Experience" },
+  { number: "3+", label: "Projects Completed" }
+];
+---
+
+<aside class="sidebar fade-in">
+  <img
+    src="/assets/profile.jpg"
+    alt="Foto Gerry Bagaskoro Putro"
+    class="profile-img"
+  />
+  <h2>Gerry Bagaskoro Putro</h2>
+  <p class="job-title">Junior Mobile Developer & IT Support Specialist</p>
+  <p class="bio">
+    I'm a Junior Mobile Developer and IT Support Specialist, and
+    Interested in Open Source Enthusiast
+  </p>
+  <a href="#" class="btn">More detail CV</a>
+  <div class="sidebar-stats">
+    {stats.map(stat => (
+      <div class="stat">
+        <span class="stat-number">{stat.number}</span>
+        <span class="stat-label">{stat.label}</span>
+      </div>
+    ))}
+  </div>
+</aside>
