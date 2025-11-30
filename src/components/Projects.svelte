@@ -35,10 +35,10 @@
         <div class="flex justify-between items-start mb-4">
           <div class="text-4xl">{project.icon}</div>
           <div class="flex gap-3">
-            <a href={project.github} target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a href={project.github} target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="View on GitHub">
               <span class="icon-[tabler--brand-github] w-5 h-5"></span>
             </a>
-            <a href={project.demo} target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">
+            <a href={project.demo} target="_blank" class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors" aria-label="View demo">
               <span class="icon-[tabler--external-link] w-5 h-5"></span>
             </a>
           </div>

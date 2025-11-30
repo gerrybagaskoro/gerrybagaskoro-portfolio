@@ -32,14 +32,14 @@
     </p>
     
     <div class="flex items-center justify-center md:justify-end gap-4">
-      <a href="mailto:gerrybagaskoro@proton.me" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Email">
-        <span class="icon-[tabler--mail] w-6 h-6"></span>
+      <a href="mailto:gerrybagaskoro@proton.me" class="hover:scale-110 transition-transform" aria-label="Email">
+        <span class="icon-[logos--google-gmail] w-6 h-6"></span>
       </a>
-      <a href="https://github.com/gerrybagaskoro" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="GitHub">
-        <span class="icon-[tabler--brand-github] w-6 h-6"></span>
+      <a href="https://github.com/gerrybagaskoro" target="_blank" class="hover:scale-110 transition-transform" aria-label="GitHub">
+        <span class="icon-[logos--github-icon] w-6 h-6"></span>
       </a>
-      <a href="https://linkedin.com/in/gerrybagaskoro" target="_blank" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="LinkedIn">
-        <span class="icon-[tabler--brand-linkedin] w-6 h-6"></span>
+      <a href="https://linkedin.com/in/gerrybagaskoro" target="_blank" class="hover:scale-110 transition-transform" aria-label="LinkedIn">
+        <span class="icon-[logos--linkedin-icon] w-6 h-6"></span>
       </a>
     </div>
   </div>
