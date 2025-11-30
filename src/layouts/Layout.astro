@@ -25,7 +25,7 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
   <body
     class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300 antialiased"
   >
-    <ModeWatcher client:load />
+    <ModeWatcher client:only="svelte" />
     <Header client:load />
     <main class="max-w-4xl mx-auto px-4 pt-24 pb-12">
       <slot />
