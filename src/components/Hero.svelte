@@ -1,3 +1,7 @@
+<script lang="ts">
+  export let profileImage = "/assets/profile.jpg"; // Fallback
+</script>
+
 <section
   class="py-12 flex flex-col md:flex-row items-start md:items-center gap-6"
 >
@@ -6,7 +10,7 @@
     style="border-color: var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.1);"
   >
     <img
-      src="/assets/profile.jpg"
+      src={profileImage}
       alt="Gerry Bagaskoro Putro"
       class="w-full h-full object-cover"
     />

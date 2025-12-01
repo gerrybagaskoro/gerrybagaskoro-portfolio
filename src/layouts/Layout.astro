@@ -1,5 +1,6 @@
 ---
 import { ModeWatcher } from "mode-watcher";
+import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.svelte";
 import Footer from "../components/Footer.svelte";
 import "../styles/global.css";
@@ -30,6 +31,16 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
     />
 
     <title>{title}</title>
+    <ViewTransitions />
+    <script is:inline>
+      const theme = localStorage.getItem("mode-watcher-theme");
+      if (
+        theme === "dark" ||
+        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
   </head>
   <body
     class="transition-colors duration-300 antialiased"
