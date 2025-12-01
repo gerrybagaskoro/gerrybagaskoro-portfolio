@@ -80,7 +80,7 @@
         ></span>
       </a>
       <a
-        href="https://instagram.com/gerrybagaskoro"
+        href="https://instagram.com/gerrybagaskoro_"
         target="_blank"
         rel="noopener noreferrer"
         class="hover:opacity-70 transition-opacity"

@@ -1,4 +1,9 @@
 <script lang="ts">
+  // Import project images here
+  // Example: import waliImg from "../assets/projects/wali.jpg";
+  import placeholderImg1 from "../assets/projects/wali.jpg";
+  import placeholderImg2 from "../assets/projects/presensi-kita.jpg";
+
   const projects = [
     {
       title: "Wali (Warga Peduli)",
@@ -7,7 +12,7 @@
       tech: ["Flutter", "Dart", "SQFLite"],
       github: "https://github.com/gerrybagaskoro/wali",
       demo: "https://github.com/gerrybagaskoro/wali",
-      icon: "📱",
+      image: placeholderImg1,
     },
     {
       title: "Presensi Kita",
@@ -16,7 +21,7 @@
       tech: ["Flutter", "Dart", "Rest API"],
       github: "https://github.com/gerrybagaskoro/absensi_ppkdjp_b3",
       demo: "https://github.com/gerrybagaskoro/absensi_ppkdjp_b3",
-      icon: "🌐",
+      image: placeholderImg2,
     },
   ];
 </script>
@@ -27,47 +32,59 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {#each projects as project}
       <div
-        class="group border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+        class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:border-[color:var(--accent-color)] transition-colors duration-300"
       >
-        <div class="flex justify-between items-start mb-4">
-          <div class="text-4xl">{project.icon}</div>
-          <div class="flex gap-3">
-            <a
-              href={project.github}
-              target="_blank"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-              aria-label="View on GitHub"
-            >
-              <span class="icon-[tabler--brand-github] w-5 h-5"></span>
-            </a>
-            <a
-              href={project.demo}
-              target="_blank"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
-              aria-label="View demo"
-            >
-              <span class="icon-[tabler--external-link] w-5 h-5"></span>
-            </a>
+        <!-- Project Image Banner -->
+        {#if project.image}
+          <div class="w-full h-48 overflow-hidden">
+            <img
+              src={project.image.src}
+              alt={project.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
           </div>
-        </div>
+        {/if}
 
-        <h3
-          class="text-xl font-bold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
-        >
-          {project.title}
-        </h3>
-        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
-          {project.description}
-        </p>
-
-        <div class="flex flex-wrap gap-2 mt-auto">
-          {#each project.tech as t}
-            <span
-              class="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-300"
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-4">
+            <h3
+              class="text-xl font-bold group-hover:text-[color:var(--accent-color)] transition-colors"
             >
-              {t}
-            </span>
-          {/each}
+              {project.title}
+            </h3>
+            <div class="flex gap-3">
+              <a
+                href={project.github}
+                target="_blank"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label="View on GitHub"
+              >
+                <span class="icon-[tabler--brand-github] w-5 h-5"></span>
+              </a>
+              <a
+                href={project.demo}
+                target="_blank"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                aria-label="View demo"
+              >
+                <span class="icon-[tabler--external-link] w-5 h-5"></span>
+              </a>
+            </div>
+          </div>
+
+          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+            {project.description}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mt-auto">
+            {#each project.tech as t}
+              <span
+                class="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-300"
+              >
+                {t}
+              </span>
+            {/each}
+          </div>
         </div>
       </div>
     {/each}
