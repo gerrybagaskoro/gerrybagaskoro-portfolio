@@ -1,4 +1,6 @@
-<section class="py-20 flex flex-col md:flex-row items-start gap-10">
+<section
+  class="py-12 flex flex-col md:flex-row items-center md:items-start gap-6"
+>
   <div
     class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 flex-shrink-0"
     style="border-color: var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.1);"
@@ -10,19 +12,19 @@
     />
   </div>
 
-  <div class="flex-1">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+  <div class="flex-1 text-center md:text-right">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">
       Hi there, I'm <span style="color: var(--accent-color);">Gerry</span>
     </h1>
     <p
-      class="text-lg md:text-xl mb-6 max-w-2xl"
+      class="text-base md:text-lg mb-6 max-w-2xl md:ml-auto"
       style="color: var(--text-secondary);"
     >
       I'm a Junior Mobile Developer and IT Support Specialist, and Interested in
       Open Source Things
     </p>
 
-    <div class="flex items-center gap-4 mt-6">
+    <div class="flex items-center justify-center md:justify-end gap-4 mt-6">
       <a
         href="mailto:gerrybagaskoro@proton.me"
         class="hover:opacity-70 transition-opacity"

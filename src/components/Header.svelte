@@ -15,8 +15,8 @@
 </script>
 
 <header
-  class="fixed top-0 w-full z-50 border-b"
-  style="background-color: var(--bg-primary); border-color: var(--border-color);"
+  class="fixed top-0 w-full z-50"
+  style="background-color: var(--bg-primary);"
 >
   <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
     <a
@@ -46,6 +46,12 @@
         class="text-sm font-medium hover:opacity-70 transition-opacity"
       >
         Projects
+      </a>
+      <a
+        href="/#skills"
+        class="text-sm font-medium hover:opacity-70 transition-opacity"
+      >
+        Skills & Achievements
       </a>
       <a
         href="/about"
@@ -81,7 +87,7 @@
   {#if isMenuOpen}
     <nav
       transition:slide={{ duration: 300, easing: quintOut, axis: "y" }}
-      class="md:hidden border-t"
+      class="md:hidden absolute top-16 right-4 w-56 rounded-xl shadow-lg border"
       style="border-color: var(--border-color); background-color: var(--bg-primary);"
     >
       <div class="flex flex-col p-4 space-y-4">
@@ -105,6 +111,13 @@
           class="text-sm font-medium hover:opacity-70 transition-opacity"
         >
           Projects
+        </a>
+        <a
+          href="/#skills"
+          on:click={closeMenu}
+          class="text-sm font-medium hover:opacity-70 transition-opacity"
+        >
+          Skills & Achievements
         </a>
         <a
           href="/about"

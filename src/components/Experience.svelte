@@ -118,11 +118,7 @@
 
   <div class="space-y-12 mb-16">
     {#each experiences as exp}
-      <div class="relative pl-8 border-l border-gray-200 dark:border-gray-800">
-        <div
-          class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600"
-        ></div>
-
+      <div class="relative pl-8">
         <div
           class="flex flex-col md:flex-row md:items-center justify-between mb-2"
         >
@@ -171,13 +167,7 @@
     <h2 class="text-2xl font-bold mb-8">Education</h2>
     <div class="space-y-12 mb-16">
       {#each education as edu}
-        <div
-          class="relative pl-8 border-l border-gray-200 dark:border-gray-800"
-        >
-          <div
-            class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600"
-          ></div>
-
+        <div class="relative pl-8">
           <div
             class="flex flex-col md:flex-row md:items-center justify-between mb-2"
           >
@@ -209,11 +199,7 @@
   <h2 class="text-2xl font-bold mb-8">Organizational Experience</h2>
   <div class="space-y-12">
     {#each organizations as org}
-      <div class="relative pl-8 border-l border-gray-200 dark:border-gray-800">
-        <div
-          class="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-gray-200 dark:bg-gray-800 border border-gray-400 dark:border-gray-600"
-        ></div>
-
+      <div class="relative pl-8">
         <div
           class="flex flex-col md:flex-row md:items-center justify-between mb-2"
         >

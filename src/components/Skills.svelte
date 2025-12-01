@@ -17,7 +17,7 @@
   };
 </script>
 
-<section class="py-10">
+<section class="py-10 scroll-mt-24" id="skills">
   <h2 class="text-2xl font-bold mb-8">Skills & Achievements</h2>
 
   <div class="grid grid-cols-1 gap-8">
@@ -32,7 +32,8 @@
           {#each skillList as skill}
             <li class="flex items-start gap-2 text-gray-600 dark:text-gray-400">
               <span
-                class="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"
+                class="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
+                style="background-color: var(--accent-color);"
               ></span>
               <span>{skill}</span>
             </li>
