@@ -27,4 +27,5 @@
 body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
+    font-family: 'Fira Sans', -apple-system, BlinkMacMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
