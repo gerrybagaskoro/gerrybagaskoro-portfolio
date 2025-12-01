@@ -1,21 +1,8 @@
-<script lang="ts">
-  import { onMount } from "svelte";
-  import gsap from "gsap";
-
-  let heroSection: HTMLElement;
-
-  onMount(() => {
-    gsap.from(heroSection, {
-      opacity: 0,
-      y: 20,
-      duration: 1,
-      ease: "power2.out",
-    });
-  });
-</script>
-
-<section bind:this={heroSection} class="py-20 flex flex-col md:flex-row items-center justify-between gap-10">
-  <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-800 shadow-xl">
+<section class="py-20 flex flex-col md:flex-row items-start gap-10">
+  <div
+    class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 flex-shrink-0"
+    style="border-color: var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.1);"
+  >
     <img
       src="/assets/profile.jpg"
       alt="Gerry Bagaskoro Putro"
@@ -23,25 +10,95 @@
     />
   </div>
 
-  <div class="flex-1 text-center md:text-right">
+  <div class="flex-1">
     <h1 class="text-4xl md:text-6xl font-bold mb-4">
-      Hi there, I'm <span class="text-blue-600 dark:text-blue-400">Gerry</span>
+      Hi there, I'm <span style="color: var(--accent-color);">Gerry</span>
     </h1>
-    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 max-w-2xl ml-auto">
-      I'm a Junior Mobile Developer and IT Support Specialist, and Interested in Open Source Things
+    <p
+      class="text-lg md:text-xl mb-6 max-w-2xl"
+      style="color: var(--text-secondary);"
+    >
+      I'm a Junior Mobile Developer and IT Support Specialist, and Interested in
+      Open Source Things
     </p>
-    
-    <div class="flex items-center justify-center md:justify-end gap-4">
-      <a href="mailto:gerrybagaskoro@proton.me" class="hover:scale-110 transition-transform" aria-label="Email">
-        <span class="icon-[logos--google-gmail] w-6 h-6"></span>
+
+    <div class="flex items-center gap-4 mt-6">
+      <a
+        href="mailto:gerrybagaskoro@proton.me"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="Email"
+        title="Email me"
+      >
+        <span
+          class="icon-[tabler--mail] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
       </a>
-      <a href="https://github.com/gerrybagaskoro" target="_blank" class="hover:scale-110 transition-transform" aria-label="GitHub">
-        <span class="icon-[logos--github-icon] w-6 h-6"></span>
+      <a
+        href="https://github.com/gerrybagaskoro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="GitHub"
+        title="GitHub"
+      >
+        <span
+          class="icon-[tabler--brand-github] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
       </a>
-      <a href="https://linkedin.com/in/gerrybagaskoro" target="_blank" class="hover:scale-110 transition-transform" aria-label="LinkedIn">
-        <span class="icon-[logos--linkedin-icon] w-6 h-6"></span>
+      <a
+        href="https://linkedin.com/in/gerrybagaskoro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="LinkedIn"
+        title="LinkedIn"
+      >
+        <span
+          class="icon-[tabler--brand-linkedin] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
+      </a>
+      <a
+        href="https://facebook.com/gerrybagaskoro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="Facebook"
+        title="Facebook"
+      >
+        <span
+          class="icon-[tabler--brand-facebook] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
+      </a>
+      <a
+        href="https://instagram.com/gerrybagaskoro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="Instagram"
+        title="Instagram"
+      >
+        <span
+          class="icon-[tabler--brand-instagram] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
+      </a>
+      <a
+        href="https://x.com/gerrybagaskoro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="X / Twitter"
+        title="X / Twitter"
+      >
+        <span
+          class="icon-[tabler--brand-x] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
       </a>
     </div>
   </div>
 </section>
-

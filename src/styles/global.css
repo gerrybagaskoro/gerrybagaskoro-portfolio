@@ -1,3 +1,30 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
 @variant dark (&:where(.dark, .dark *));
+
+/* Custom Cream Color Palette */
+:root {
+    /* Light Theme - Cream */
+    --bg-primary: #FAF8F3;
+    --bg-secondary: #F5F1E8;
+    --text-primary: #2D2A27;
+    --text-secondary: #5A5550;
+    --border-color: #E5DFD0;
+    --accent-color: #8B7355;
+}
+
+.dark {
+    /* Dark Theme - Warm Dark */
+    --bg-primary: #1A1816;
+    --bg-secondary: #252220;
+    --text-primary: #F5F1E8;
+    --text-secondary: #C4BCB0;
+    --border-color: #3A3632;
+    --accent-color: #B89968;
+}
+
+/* Apply custom colors */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
