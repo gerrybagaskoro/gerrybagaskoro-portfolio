@@ -38,11 +38,11 @@
     </nav>
 
     <!-- Mobile Menu Toggle -->
-    <div class="flex items-center gap-4 md:hidden">
+    <div class="flex items-center gap-2 md:hidden">
       <ThemeToggle />
       <button 
         on:click={toggleMenu} 
-        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center"
         aria-label="Toggle Menu"
       >
         <span class="icon-[tabler--layout-grid] w-6 h-6 text-gray-600 dark:text-gray-400"></span>
