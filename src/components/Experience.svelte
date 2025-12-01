@@ -118,7 +118,7 @@
 
   <div class="space-y-12 mb-16">
     {#each experiences as exp}
-      <div class="relative pl-8">
+      <div class="relative">
         <div
           class="flex flex-col md:flex-row md:items-center justify-between mb-2"
         >
@@ -167,7 +167,7 @@
     <h2 class="text-2xl font-bold mb-8">Education</h2>
     <div class="space-y-12 mb-16">
       {#each education as edu}
-        <div class="relative pl-8">
+        <div class="relative">
           <div
             class="flex flex-col md:flex-row md:items-center justify-between mb-2"
           >
@@ -199,7 +199,7 @@
   <h2 class="text-2xl font-bold mb-8">Organizational Experience</h2>
   <div class="space-y-12">
     {#each organizations as org}
-      <div class="relative pl-8">
+      <div class="relative">
         <div
           class="flex flex-col md:flex-row md:items-center justify-between mb-2"
         >

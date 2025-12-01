@@ -1,5 +1,5 @@
 <section
-  class="py-12 flex flex-col md:flex-row items-center md:items-start gap-6"
+  class="py-12 flex flex-col md:flex-row items-start md:items-center gap-6"
 >
   <div
     class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 flex-shrink-0"
@@ -12,7 +12,7 @@
     />
   </div>
 
-  <div class="flex-1 text-center md:text-right">
+  <div class="flex-1 text-left md:text-right">
     <h1 class="text-3xl md:text-5xl font-bold mb-4">
       Hi there, I'm <span style="color: var(--accent-color);">Gerry</span>
     </h1>
@@ -24,7 +24,7 @@
       Open Source Things
     </p>
 
-    <div class="flex items-center justify-center md:justify-end gap-4 mt-6">
+    <div class="flex items-center justify-start md:justify-end gap-4 mt-6">
       <a
         href="mailto:gerrybagaskoro@proton.me"
         class="hover:opacity-70 transition-opacity"
