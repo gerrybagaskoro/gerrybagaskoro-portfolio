@@ -2,10 +2,7 @@
     const year = new Date().getFullYear();
 </script>
 
-<footer
-    class="py-12 text-center border-t"
-    style="border-color: var(--border-color);"
->
+<footer class="py-12 text-center">
     <!-- Social Media Icons -->
     <div class="flex items-center justify-center gap-4 mb-6">
         <a

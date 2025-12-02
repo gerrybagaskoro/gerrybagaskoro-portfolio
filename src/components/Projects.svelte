@@ -32,7 +32,8 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {#each projects as project}
       <div
-        class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:border-[color:var(--accent-color)]"
+        class="group border rounded-xl overflow-hidden hover:border-[color:var(--accent-color)]"
+        style="border-color: var(--border-color);"
       >
         <!-- Project Image Banner -->
         {#if project.image}
@@ -56,7 +57,8 @@
               <a
                 href={project.github}
                 target="_blank"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                class="transition-colors hover:opacity-100"
+                style="color: var(--text-secondary);"
                 aria-label="View on GitHub"
               >
                 <span class="icon-[tabler--brand-github] w-5 h-5"></span>
@@ -64,7 +66,8 @@
               <a
                 href={project.demo}
                 target="_blank"
-                class="text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                class="transition-colors hover:opacity-100"
+                style="color: var(--text-secondary);"
                 aria-label="View demo"
               >
                 <span class="icon-[tabler--external-link] w-5 h-5"></span>
@@ -72,14 +75,18 @@
             </div>
           </div>
 
-          <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+          <p
+            class="text-sm mb-4 line-clamp-3"
+            style="color: var(--text-secondary);"
+          >
             {project.description}
           </p>
 
           <div class="flex flex-wrap gap-2 mt-auto">
             {#each project.tech as t}
               <span
-                class="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-800 rounded text-gray-600 dark:text-gray-300"
+                class="px-2 py-1 text-xs font-medium rounded"
+                style="background-color: var(--bg-secondary); color: var(--text-secondary);"
               >
                 {t}
               </span>

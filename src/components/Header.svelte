@@ -68,7 +68,6 @@
       <ThemeToggle />
     </nav>
 
-    <!-- Mobile Menu Toggle -->
     <div class="flex items-center gap-2 md:hidden">
       <ThemeToggle />
       <button
@@ -77,7 +76,8 @@
         aria-label="Toggle Menu"
       >
         <span
-          class="icon-[tabler--layout-grid] w-6 h-6 text-gray-600 dark:text-gray-400"
+          class="icon-[tabler--layout-grid] w-6 h-6"
+          style="color: var(--text-secondary);"
         ></span>
       </button>
     </div>

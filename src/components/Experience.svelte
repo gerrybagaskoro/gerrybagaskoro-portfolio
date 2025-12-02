@@ -123,14 +123,15 @@
           class="flex flex-col md:flex-row md:items-center justify-between mb-2"
         >
           <h3 class="text-xl font-bold">{exp.company}</h3>
-          <span class="text-sm text-gray-500 dark:text-gray-400"
+          <span class="text-sm" style="color: var(--text-secondary);"
             >{exp.period}</span
           >
         </div>
 
         <div class="mb-4">
           <span
-            class="inline-block px-2 py-1 text-xs font-medium border border-gray-300 dark:border-gray-700 rounded bg-gray-100 dark:bg-gray-900"
+            class="inline-block px-2 py-1 text-xs font-medium border rounded"
+            style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-secondary);"
           >
             {exp.role}
           </span>
@@ -139,7 +140,8 @@
         <div class="mb-4">
           <h4 class="font-semibold mb-2">Responsibilities</h4>
           <ul
-            class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-400 text-sm"
+            class="list-disc list-inside space-y-1 text-sm"
+            style="color: var(--text-secondary);"
           >
             {#each exp.responsibilities as resp}
               <li>{resp}</li>
@@ -152,7 +154,8 @@
           <div class="flex flex-wrap gap-2">
             {#each exp.tech as t}
               <span
-                class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-md shadow-sm"
+                class="px-3 py-1 text-xs font-medium border rounded-md shadow-sm"
+                style="background-color: var(--bg-primary); border-color: var(--border-color); color: var(--text-secondary);"
               >
                 {t}
               </span>
@@ -172,18 +175,19 @@
             class="flex flex-col md:flex-row md:items-center justify-between mb-2"
           >
             <h3 class="text-xl font-bold">{edu.institution}</h3>
-            <span class="text-sm text-gray-500 dark:text-gray-400"
+            <span class="text-sm" style="color: var(--text-secondary);"
               >{edu.period}</span
             >
           </div>
 
           <div class="mb-4">
-            <p class="text-gray-700 dark:text-gray-300 font-medium">
+            <p class="font-medium" style="color: var(--text-secondary);">
               {edu.program}
             </p>
             {#if edu.details}
               <ul
-                class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-400 text-sm mt-2"
+                class="list-disc list-inside space-y-1 text-sm mt-2"
+                style="color: var(--text-secondary);"
               >
                 {#each edu.details as detail}
                   <li>{detail}</li>
@@ -204,14 +208,15 @@
           class="flex flex-col md:flex-row md:items-center justify-between mb-2"
         >
           <h3 class="text-xl font-bold">{org.name}</h3>
-          <span class="text-sm text-gray-500 dark:text-gray-400"
+          <span class="text-sm" style="color: var(--text-secondary);"
             >{org.period}</span
           >
         </div>
 
         <div class="mb-4">
           <span
-            class="inline-block px-2 py-1 text-xs font-medium border border-gray-300 dark:border-gray-700 rounded bg-gray-100 dark:bg-gray-900"
+            class="inline-block px-2 py-1 text-xs font-medium border rounded"
+            style="border-color: var(--border-color); background-color: var(--bg-secondary); color: var(--text-secondary);"
           >
             {org.role}
           </span>
@@ -220,7 +225,8 @@
         <div class="mb-4">
           <h4 class="font-semibold mb-2">Responsibilities</h4>
           <ul
-            class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-400 text-sm"
+            class="list-disc list-inside space-y-1 text-sm"
+            style="color: var(--text-secondary);"
           >
             {#each org.responsibilities as resp}
               <li>{resp}</li>

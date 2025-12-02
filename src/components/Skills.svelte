@@ -24,13 +24,17 @@
     {#each Object.entries(skills) as [category, skillList]}
       <div class="space-y-4">
         <h3
-          class="font-semibold text-lg text-gray-800 dark:text-gray-200 border-b border-gray-200 dark:border-gray-800 pb-2"
+          class="font-semibold text-lg border-b pb-2"
+          style="color: var(--text-primary); border-color: var(--border-color);"
         >
           {category}
         </h3>
         <ul class="space-y-3">
           {#each skillList as skill}
-            <li class="flex items-start gap-2 text-gray-600 dark:text-gray-400">
+            <li
+              class="flex items-start gap-2"
+              style="color: var(--text-secondary);"
+            >
               <span
                 class="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                 style="background-color: var(--accent-color);"
