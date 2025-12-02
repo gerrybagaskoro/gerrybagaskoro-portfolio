@@ -29,6 +29,7 @@
     </p>
 
     <div class="flex items-center justify-start md:justify-end gap-4 mt-6">
+      <!-- 1. Email -->
       <a
         href="mailto:gerrybagaskoro@proton.me"
         class="hover:opacity-70 transition-opacity"
@@ -40,6 +41,7 @@
           style="color: var(--text-secondary);"
         ></span>
       </a>
+      <!-- 2. GitHub -->
       <a
         href="https://github.com/gerrybagaskoro"
         target="_blank"
@@ -53,6 +55,7 @@
           style="color: var(--text-secondary);"
         ></span>
       </a>
+      <!-- 3. LinkedIn -->
       <a
         href="https://linkedin.com/in/gerrybagaskoro"
         target="_blank"
@@ -66,6 +69,7 @@
           style="color: var(--text-secondary);"
         ></span>
       </a>
+      <!-- 4. Facebook -->
       <a
         href="https://facebook.com/gerrybagaskoro"
         target="_blank"
@@ -79,6 +83,7 @@
           style="color: var(--text-secondary);"
         ></span>
       </a>
+      <!-- 5. Instagram -->
       <a
         href="https://instagram.com/gerrybagaskoro_"
         target="_blank"
@@ -92,6 +97,7 @@
           style="color: var(--text-secondary);"
         ></span>
       </a>
+      <!-- 6. X / Twitter -->
       <a
         href="https://x.com/gerrybagaskoro"
         target="_blank"
@@ -102,6 +108,20 @@
       >
         <span
           class="icon-[tabler--brand-x] w-6 h-6"
+          style="color: var(--text-secondary);"
+        ></span>
+      </a>
+      <!-- 7. Telegram -->
+      <a
+        href="https://t.me/gerrybagaskoro"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:opacity-70 transition-opacity"
+        aria-label="Telegram"
+        title="Telegram"
+      >
+        <span
+          class="icon-[simple-icons--telegram] w-6 h-6"
           style="color: var(--text-secondary);"
         ></span>
       </a>
