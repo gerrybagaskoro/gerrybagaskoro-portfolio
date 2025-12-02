@@ -4,6 +4,7 @@
   import { quintOut } from "svelte/easing";
 
   let isMenuOpen = false;
+  let isMenuButtonHovered = false;
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
@@ -72,7 +73,12 @@
       <ThemeToggle />
       <button
         on:click={toggleMenu}
-        class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center justify-center"
+        on:mouseenter={() => (isMenuButtonHovered = true)}
+        on:mouseleave={() => (isMenuButtonHovered = false)}
+        class="p-2 rounded-lg transition-colors flex items-center justify-center"
+        style="background-color: {isMenuButtonHovered
+          ? 'var(--bg-secondary)'
+          : 'transparent'};"
         aria-label="Toggle Menu"
       >
         <span

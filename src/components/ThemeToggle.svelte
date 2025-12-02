@@ -29,9 +29,7 @@
   on:mouseenter={() => (isHovered = true)}
   on:mouseleave={() => (isHovered = false)}
   class="p-2 rounded-lg transition-all duration-300 flex items-center justify-center"
-  style="color: var(--text-secondary); background-color: {isHovered
-    ? 'var(--bg-secondary)'
-    : 'transparent'};"
+  style="background-color: {isHovered ? 'var(--bg-secondary)' : 'transparent'};"
   aria-label="Toggle Theme"
   title="Toggle Theme (Auto/Light/Dark)"
 >
@@ -46,6 +44,7 @@
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+      style="color: var(--text-secondary);"
     >
       <circle cx="12" cy="12" r="4"></circle>
       <path d="M12 2v2"></path>
@@ -68,6 +67,7 @@
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+      style="color: var(--text-secondary);"
     >
       <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
     </svg>
@@ -82,6 +82,7 @@
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
+      style="color: var(--text-secondary);"
     >
       <rect width="20" height="14" x="2" y="3" rx="2"></rect>
       <line x1="8" x2="16" y1="21" y2="21"></line>
