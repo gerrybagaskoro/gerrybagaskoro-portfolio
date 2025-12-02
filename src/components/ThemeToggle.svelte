@@ -4,6 +4,7 @@
 
   // State to track the user's preference: 'light' | 'dark' | 'system'
   let currentSetting = "system";
+  let isHovered = false;
 
   onMount(() => {
     // Initialize from localStorage or default to system
@@ -25,7 +26,12 @@
 
 <button
   on:click={handleClick}
-  class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300 text-gray-600 dark:text-gray-400 flex items-center justify-center"
+  on:mouseenter={() => (isHovered = true)}
+  on:mouseleave={() => (isHovered = false)}
+  class="p-2 rounded-lg transition-all duration-300 flex items-center justify-center"
+  style="color: var(--text-secondary); background-color: {isHovered
+    ? 'var(--bg-secondary)'
+    : 'transparent'};"
   aria-label="Toggle Theme"
   title="Toggle Theme (Auto/Light/Dark)"
 >
