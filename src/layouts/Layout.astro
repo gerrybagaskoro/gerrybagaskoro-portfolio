@@ -14,7 +14,7 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" style="background-color: #1A1816;">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -31,22 +31,43 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
     />
 
     <title>{title}</title>
-    <ViewTransitions />
     <script is:inline>
+      // Apply theme IMMEDIATELY before any rendering to prevent flash
       const theme = localStorage.getItem("mode-watcher-theme");
-      if (
-        theme === "dark" ||
-        (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+
+      if (theme === "dark" || (!theme && prefersDark)) {
         document.documentElement.classList.add("dark");
+      } else {
+        // If light mode, remove the dark background inline style
+        document.documentElement.style.backgroundColor = "";
       }
+
+      // Function to enable transitions
+      function enableTransitions() {
+        document.documentElement.classList.add("transitions-enabled");
+      }
+
+      // Enable transitions after initial load
+      if (document.readyState === "loading") {
+        window.addEventListener("load", enableTransitions);
+      } else {
+        // Document already loaded (happens on navigation with ViewTransitions)
+        enableTransitions();
+      }
+
+      // Re-enable transitions after Astro view transitions
+      document.addEventListener("astro:after-swap", enableTransitions);
     </script>
+    <ViewTransitions />
   </head>
   <body
-    class="transition-colors duration-300 antialiased"
+    class="antialiased"
     style="background-color: var(--bg-primary); color: var(--text-primary);"
   >
-    <ModeWatcher client:only="svelte" />
+    <ModeWatcher client:only="svelte" disableTransitions={false} />
     <Header client:load />
     <main class="max-w-4xl mx-auto px-4 pt-24 pb-12">
       <slot />

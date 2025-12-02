@@ -32,7 +32,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {#each projects as project}
       <div
-        class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:border-[color:var(--accent-color)] transition-colors duration-300"
+        class="group border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:border-[color:var(--accent-color)]"
       >
         <!-- Project Image Banner -->
         {#if project.image}
