@@ -24,14 +24,9 @@
 }
 
 /* Apply custom colors */
-/* Default light background - will be overridden by inline style for dark mode */
+/* Use CSS custom property set by JavaScript for instant background */
 html {
-    background-color: #FAF8F3;
-}
-
-/* Dark mode background - inline style will override this too */
-html.dark {
-    background-color: #1A1816;
+    background-color: var(--initial-bg, #FAF8F3);
 }
 
 html,

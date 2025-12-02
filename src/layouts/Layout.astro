@@ -14,7 +14,7 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth" style="background-color: #FAF8F3;">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -32,41 +32,43 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
 
     <title>{title}</title>
     <script is:inline>
-      // Apply theme IMMEDIATELY before any rendering to prevent flash
-      function applyTheme() {
+      // Determine theme and set CSS variable IMMEDIATELY
+      (function () {
         const theme = localStorage.getItem("mode-watcher-theme");
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)",
         ).matches;
+        const isDark = theme === "dark" || (!theme && prefersDark);
 
-        if (theme === "dark" || (!theme && prefersDark)) {
+        // Set CSS custom property for initial background
+        document.documentElement.style.setProperty(
+          "--initial-bg",
+          isDark ? "#1A1816" : "#FAF8F3",
+        );
+
+        if (isDark) {
           document.documentElement.classList.add("dark");
-          // Keep dark background during navigation
-          document.documentElement.style.backgroundColor = "#1A1816";
-        } else {
-          // If light mode, remove the dark background inline style
-          document.documentElement.style.backgroundColor = "#FAF8F3";
-          document.documentElement.classList.remove("dark");
         }
-      }
-
-      // Apply theme on initial load
-      applyTheme();
+      })();
 
       // Apply theme BEFORE Astro swaps content (prevents flash during navigation)
       document.addEventListener("astro:before-swap", (ev) => {
-        // Apply theme to the new document before it's swapped in
         const theme = localStorage.getItem("mode-watcher-theme");
         const prefersDark = window.matchMedia(
           "(prefers-color-scheme: dark)",
         ).matches;
+        const isDark = theme === "dark" || (!theme && prefersDark);
 
-        if (theme === "dark" || (!theme && prefersDark)) {
+        // Set CSS custom property on new document
+        ev.newDocument.documentElement.style.setProperty(
+          "--initial-bg",
+          isDark ? "#1A1816" : "#FAF8F3",
+        );
+
+        if (isDark) {
           ev.newDocument.documentElement.classList.add("dark");
-          ev.newDocument.documentElement.style.backgroundColor = "#1A1816";
         } else {
           ev.newDocument.documentElement.classList.remove("dark");
-          ev.newDocument.documentElement.style.backgroundColor = "#FAF8F3";
         }
       });
 
@@ -79,7 +81,6 @@ const { title, description = "Gerry Bagaskoro Portfolio" } = Astro.props;
       if (document.readyState === "loading") {
         window.addEventListener("load", enableTransitions);
       } else {
-        // Document already loaded (happens on navigation with ViewTransitions)
         enableTransitions();
       }
 
