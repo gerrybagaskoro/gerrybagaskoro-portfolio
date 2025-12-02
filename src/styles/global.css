@@ -24,6 +24,16 @@
 }
 
 /* Apply custom colors */
+/* Default light background - will be overridden by inline style for dark mode */
+html {
+    background-color: #FAF8F3;
+}
+
+/* Dark mode background - inline style will override this too */
+html.dark {
+    background-color: #1A1816;
+}
+
 html,
 body {
     background-color: var(--bg-primary);
@@ -31,16 +41,18 @@ body {
     font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Transition backgrounds and borders only - avoid text color to prevent flickering */
-/* Only enable transitions after initial page load to prevent flash */
-*,
-*::before,
-*::after {
-    transition: none;
+/* Prevent flash on initial load by disabling ONLY color transitions */
+/* Transform and other transitions work normally from the start */
+html:not(.transitions-enabled) *:not([class*="transition-"]) {
+    transition-property: transform, opacity, filter;
 }
 
-html.transitions-enabled *,
-html.transitions-enabled *::before,
-html.transitions-enabled *::after {
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+/* Enable smooth color transitions after page loads */
+html.transitions-enabled *:not([class*="transition-"]) {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Elements with Tailwind transition classes keep their own transitions */
+[class*="transition-"] {
+    /* Tailwind classes work normally */
 }
