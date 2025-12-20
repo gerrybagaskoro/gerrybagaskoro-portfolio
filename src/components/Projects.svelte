@@ -21,6 +21,8 @@
       tech: ["Flutter", "Dart", "Rest API"],
       github: "https://github.com/gerrybagaskoro/absensi_ppkdjp_b3",
       demo: "https://github.com/gerrybagaskoro/absensi_ppkdjp_b3",
+      playstore:
+        "https://play.google.com/store/apps/details?id=com.ppkd.presensikita",
       image: placeholderImg2,
     },
   ];
@@ -54,6 +56,17 @@
               {project.title}
             </h3>
             <div class="flex gap-3">
+              {#if project.playstore}
+                <a
+                  href={project.playstore}
+                  target="_blank"
+                  class="transition-colors hover:opacity-100"
+                  style="color: var(--text-secondary);"
+                  aria-label="View on Play Store"
+                >
+                  <span class="icon-[tabler--brand-google-play] w-5 h-5"></span>
+                </a>
+              {/if}
               <a
                 href={project.github}
                 target="_blank"
