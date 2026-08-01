@@ -6,6 +6,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://gerrybagaskoro.netlify.app',
   integrations: [svelte()],
+  image: {
+    domains: ['avatars.githubusercontent.com'],
+  },
   vite: {
     plugins: [tailwindcss()],
   },

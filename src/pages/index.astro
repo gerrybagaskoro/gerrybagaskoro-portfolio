@@ -5,13 +5,38 @@ import Experience from "../components/Experience.svelte";
 import Projects from "../components/Projects.svelte";
 import Skills from "../components/Skills.svelte";
 import { getImage } from "astro:assets";
-import profileImg from "../assets/profile.jpg";
 
-const optimizedProfile = await getImage({ src: profileImg, format: "webp" });
+const GITHUB_USERNAME = "gerrybagaskoro";
+let profileImageSrc = `/assets/profile.jpg`; // fallback
+
+try {
+  const res = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`, {
+    headers: {
+      "User-Agent": "gerrybagaskoro-portfolio",
+      "Accept": "application/vnd.github+json",
+    },
+  });
+
+  if (res.ok) {
+    const data = await res.json();
+    const avatarUrl: string = data.avatar_url;
+
+    const optimizedProfile = await getImage({
+      src: avatarUrl,
+      width: 256,
+      height: 256,
+      format: "webp",
+      inferSize: true,
+    });
+    profileImageSrc = optimizedProfile.src;
+  }
+} catch (e) {
+  console.warn("Failed to fetch GitHub avatar, using local fallback.", e);
+}
 ---
 
 <Layout title="Gerry Bagaskoro Putro - Portfolio">
-  <Hero client:load profileImage={optimizedProfile.src} />
+  <Hero client:load profileImage={profileImageSrc} />
   <div class="my-6"></div>
   <Experience client:visible />
   <div class="my-6"></div>
