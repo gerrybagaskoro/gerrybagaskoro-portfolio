@@ -1,8 +1,6 @@
 <script lang="ts">
-  // Import project images here
-  // Example: import waliImg from "../assets/projects/wali.jpg";
-  import placeholderImg1 from "../assets/projects/wali.jpg";
-  import placeholderImg2 from "../assets/projects/presensi-kita.jpg";
+  // projectImages is passed from index.astro — already optimized to WebP at build time
+  export let projectImages: Record<string, string> = {};
 
   const projects = [
     {
@@ -12,7 +10,7 @@
       tech: ["Flutter", "Dart", "SQFLite"],
       github: "https://github.com/gerrybagaskoro/wali",
       demo: "https://github.com/gerrybagaskoro/wali",
-      image: placeholderImg1,
+      imageKey: "wali",
     },
     {
       title: "Presensi Kita",
@@ -23,7 +21,7 @@
       demo: "https://github.com/gerrybagaskoro/absensi_ppkdjp_b3",
       playstore:
         "https://play.google.com/store/apps/details?id=com.ppkd.presensikita",
-      image: placeholderImg2,
+      imageKey: "presensi-kita",
     },
   ];
 </script>
@@ -38,11 +36,13 @@
         style="border-color: var(--border-color);"
       >
         <!-- Project Image Banner -->
-        {#if project.image}
+        {#if projectImages[project.imageKey]}
           <div class="w-full h-48 overflow-hidden">
             <img
-              src={project.image.src}
+              src={projectImages[project.imageKey]}
               alt={project.title}
+              loading="lazy"
+              decoding="async"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>

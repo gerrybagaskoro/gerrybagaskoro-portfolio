@@ -5,6 +5,8 @@ import Experience from "../components/Experience.svelte";
 import Projects from "../components/Projects.svelte";
 import Skills from "../components/Skills.svelte";
 import { getImage } from "astro:assets";
+import waliImg from "../assets/projects/wali.jpg";
+import presensiKitaImg from "../assets/projects/presensi-kita.jpg";
 
 const GITHUB_USERNAME = "gerrybagaskoro";
 let profileImageSrc = `/assets/profile.jpg`; // fallback
@@ -33,6 +35,16 @@ try {
 } catch (e) {
   console.warn("Failed to fetch GitHub avatar, using local fallback.", e);
 }
+
+const [optimizedWali, optimizedPresensiKita] = await Promise.all([
+  getImage({ src: waliImg, width: 600, format: "webp", quality: 75 }),
+  getImage({ src: presensiKitaImg, width: 600, format: "webp", quality: 75 }),
+]);
+
+const projectImages: Record<string, string> = {
+  wali: optimizedWali.src,
+  "presensi-kita": optimizedPresensiKita.src,
+};
 ---
 
 <Layout title="Gerry Bagaskoro Putro - Portfolio">
@@ -40,7 +52,7 @@ try {
   <div class="my-6"></div>
   <Experience client:visible />
   <div class="my-6"></div>
-  <Projects client:visible />
+  <Projects client:visible projectImages={projectImages} />
   <div class="my-6"></div>
   <Skills client:visible />
 </Layout>
